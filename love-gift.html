@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية عيد الحب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0c0d0;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1, h2 {
+            color: #d34f88;
+        }
+
+        #heartButton {
+            padding: 20px;
+            background-color: #d34f88;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #heartButton:hover {
+            background-color: #f17a9c;
+        }
+
+        #passwordPage, #heartPage, #messagePage {
+            display: none;
+        }
+
+        #passwordPage {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- صفحة كلمة السر -->
+    <div id="passwordPage">
+        <h1>ادخل كلمة السر 💖</h1>
+        <input type="password" id="password" placeholder="أدخل كلمة السر">
+        <button onclick="checkPassword()">ادخل</button>
+    </div>
+
+    <!-- صفحة القلب التفاعلي -->
+    <div id="heartPage">
+        <h2>M + M = ∞</h2>
+        <button id="heartButton" onclick="pressHeart()">اضغط هنا 💞</button>
+        <p>عدد الضغطات: <span id="pressCount">0</span>/100</p>
+    </div>
+
+    <!-- صفحة الرسائل -->
+    <div id="messagePage">
+        <h2>حب حقيقي بين امرأة ورجل 👸🏻🤍</h2>
+        <p>نص الرسالة الخاصة عن الحب...</p>
+        <p>في عيد الحب ما نبيش نهديك وردة تذبل، ولا كلمة تنقال وخلاص… نبي نهديك قلبي بكل ما فيه، بكل خوفه، بكل ضعفه، بكل صدقه 🤍</p>
+        <p>الحب مش مجرد شعور يجي ويروح، الحب قرار… قرار إنك تبقى، حتى في الأيام الصعبة، قرار إنك تحتوي، حتى لما ما يكونش في كلام…</p>
+        <p>أنا نحبك مش لأنك كاملة، نحبك لأنك حقيقية، لأن ضحكتك تبدل مزاجي، لأن صوتك يهدّي قلبي، لأن وجودك جنبي يخليني نحس إني أقوى من أي شي 💞</p>
+        <p>الحب بين امرأة ورجل مش بس كلام حلو، هو احترام، هو خوف عليك أكثر من خوفي على نفسي، هو غيرة بنية طيبة، هو اهتمام في تفاصيل صغيرة…</p>
+        <p>أنتِ مش مجرد شخص في حياتي، أنتِ راحتي، أنتِ سكوني، أنتِ الجزء اللي كنت ناقصه وما كنتش نعرف 🤍</p>
+        <p>إذا خيروني بين ألف طريق، نختار الطريق اللي فيه إيدك في إيدي، حتى لو كان طويل، حتى لو كان فيه تعب، المهم إننا مع بعض 💞</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "526") {
+                document.getElementById("passwordPage").style.display = "none";
+                document.getElementById("heartPage").style.display = "block";
+            } else {
+                alert("كلمة السر غير صحيحة");
+            }
+        }
+
+        let pressCount = 0;
+
+        function pressHeart() {
+            pressCount++;
+            document.getElementById("pressCount").textContent = pressCount;
+            if (pressCount >= 100) {
+                document.getElementById("heartPage").style.display = "none";
+                document.getElementById("messagePage").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
